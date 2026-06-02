@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="calculator">
+            <div class="display">
+                <input type="text" id="display" class="display-input" readonly>
+            </div>
+            
+            <div class="button-grid">
+                <!-- Row 1: Basic Operations & Memory -->
+                <button class="btn function-btn" onclick="clearDisplay()">C</button>
+                <button class="btn function-btn" onclick="deleteLast()">DEL</button>
+                <button class="btn function-btn" onclick="toggleSign()">±</button>
+                <button class="btn operator-btn" onclick="appendOperator('/')">÷</button>
+                
+                <!-- Row 2: Scientific Functions -->
+                <button class="btn sci-btn" onclick="appendFunction('sin')">sin</button>
+                <button class="btn sci-btn" onclick="appendFunction('cos')">cos</button>
+                <button class="btn sci-btn" onclick="appendFunction('tan')">tan</button>
+                <button class="btn operator-btn" onclick="appendOperator('*')">×</button>
+                
+                <!-- Row 3: More Scientific Functions -->
+                <button class="btn sci-btn" onclick="appendFunction('sqrt')">√</button>
+                <button class="btn sci-btn" onclick="appendFunction('log')">log</button>
+                <button class="btn sci-btn" onclick="appendFunction('ln')">ln</button>
+                <button class="btn operator-btn" onclick="appendOperator('-')">−</button>
+                
+                <!-- Row 4: Power & Constants -->
+                <button class="btn sci-btn" onclick="appendFunction('pow')">x²</button>
+                <button class="btn sci-btn" onclick="appendFunction('cbrt')">∛</button>
+                <button class="btn sci-btn" onclick="appendConstant('pi')">π</button>
+                <button class="btn operator-btn" onclick="appendOperator('+')">+</button>
+                
+                <!-- Row 5: Numbers & More Functions -->
+                <button class="btn number-btn" onclick="appendNumber('7')">7</button>
+                <button class="btn number-btn" onclick="appendNumber('8')">8</button>
+                <button class="btn number-btn" onclick="appendNumber('9')">9</button>
+                <button class="btn sci-btn" onclick="appendFunction('fact')">n!</button>
+                
+                <!-- Row 6: Numbers & Functions -->
+                <button class="btn number-btn" onclick="appendNumber('4')">4</button>
+                <button class="btn number-btn" onclick="appendNumber('5')">5</button>
+                <button class="btn number-btn" onclick="appendNumber('6')">6</button>
+                <button class="btn sci-btn" onclick="appendConstant('e')">e</button>
+                
+                <!-- Row 7: Numbers & Decimal -->
+                <button class="btn number-btn" onclick="appendNumber('1')">1</button>
+                <button class="btn number-btn" onclick="appendNumber('2')">2</button>
+                <button class="btn number-btn" onclick="appendNumber('3')">3</button>
+                <button class="btn sci-btn" onclick="appendFunction('percent')">%</button>
+                
+                <!-- Row 8: Zero & Decimal -->
+                <button class="btn number-btn zero-btn" onclick="appendNumber('0')">0</button>
+                <button class="btn number-btn" onclick="appendNumber('.')">.</button>
+                <button class="btn equals-btn" onclick="calculate()">=</button>
+            </div>
+            
+            <div class="history">
+                <h3>History</h3>
+                <div id="history-list"></div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
